@@ -65,4 +65,14 @@ These steps are:
 
 9) COMBINESEG: Combines the segments into block averages and total avererages.
 
+## A Few Tips
 
+Start out testing one array task for the run_array script before launching everyone, make sure you are getting the files you expect.
+
+10,000 trajectories are a good starting point for calculating activation energies.
+
+Frequently it is faster to skip the checkup step (by typing touch .flag_checkup) and then just using grep -r "CANCELLED" logs/ on the logs folder. 
+
+If the code isn't working initially, double check that you have modified it to match your environment (especially gen_sub_scripts.py)
+
+combine_segments is much faster if you add the option -higher 0 to the call to parse_and_combine.py. This disables higher derivatives and only calculates first derivatives. This last step is also more expensive the more components of energy that you have. 
