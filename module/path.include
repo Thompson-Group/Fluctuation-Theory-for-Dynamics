@@ -1,0 +1,3 @@
+prepend_path('PATH', '/home/e924p726/Direct_Calculation_Fluctuations/src/exec/')
+prepend_path('PATH', '/home/e924p726/Direct_Calculation_Fluctuations')
+prepend_path('PATH', '/home/e924p726/Direct_Calculation_Fluctuations/bin/')

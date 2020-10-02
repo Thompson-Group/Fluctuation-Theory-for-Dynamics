@@ -1,0 +1,9 @@
+#!/bin/bash
+#SBATCH --job-name=direct_calc_nve
+#SBATCH --partition=sixhour
+#SBATCH --output=./logs/dcm-%a.out
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=2
+#SBATCH --constraint=intel,avx2
+#SBATCH --mem=10G
+#SBATCH --time=06:00:00

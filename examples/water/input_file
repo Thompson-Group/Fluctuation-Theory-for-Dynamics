@@ -1,0 +1,37 @@
+#------------------------------------
+#- This is the input file for:      -
+#-   Direct Fluctions Calculations  -
+#- Only change uncommented lines    -
+#------------------------------------
+# Program (LAMMPS or CP2K): 
+LAMMPS
+# Run Style (NVT or NPT):
+NPT
+# Number of Molecule Types:
+1
+# Identifier of Molecules(LEAVE 4 LINES SPACE):
+water
+# Starting Configuration (in STEPS):
+1000100
+# Ending Configuration (in STEPS):
+6000000 
+# Separation of Configurations (in STEPS):
+1000
+# # Dump Frequency (in picoseconds): 
+0.01 
+# # Num Times (How many dumps there are per nve trajectory - (NVE Length/dump freq):
+5000 
+# Blocks (How many blocks there should be):
+10 
+# Files Per Segment (How many files there should be averaged into a single segment):
+500
+# Files (How many NVE trajectories there are):
+5000
+# NVE Length (Number of STEPS):
+50000
+# Number of jobs per array job(A good default is 50):
+25
+# Correlation Functions (TRANSPORT or IONPAIRING):
+TRANSPORT
+# If IONPAIRING: Input Constraint in Angstroms):
+0.0

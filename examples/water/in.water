@@ -1,0 +1,48 @@
+# TIP4P/2005 water box
+# 298.15 K, 1 bar
+
+units		real	
+atom_style	full
+
+boundary        p p p
+
+pair_style	lj/cut/tip4p/long 1 2 1 1 0.1546 10.5 8.5
+pair_modify     mix arithmetic
+pair_modify tail yes
+kspace_style	pppm/tip4p 1.0e-4
+
+read_data	data.water
+
+bond_style	harmonic
+angle_style	harmonic
+dihedral_style	none
+improper_style	none
+
+bond_coeff	1 553.0000 0.9572
+angle_coeff     1 55.0  104.52
+
+neighbor        2.0 bin
+neigh_modify	every 2 delay 0 check yes
+
+velocity	all create 298.15 234233 dist gaussian
+
+fix		1 all shake 0.0001 20 0 b 1 a 1 
+
+timestep 1.0
+
+thermo_style    custom step time etotal temp pe ke evdwl ecoul ebond eangle elong vol press pxx pyy pzz pxy pxz pyz density
+thermo		1000
+
+fix             2 all npt temp 298.15 298.15 100.0 iso 0.98692326671 0.98692326671 1000.0 
+
+# Equilibration
+run             1000000
+
+thermo_modify   lost warn
+
+shell mkdir RESTART
+restart         1000 RESTART/restart.*
+
+run             5000000
+
+
