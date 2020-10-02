@@ -1,3 +1,6 @@
+[![DOI](https://zenodo.org/badge/300641775.svg)](https://zenodo.org/badge/latestdoi/300641775)
+
+
 This code is copyright October 2020 by Ezekiel Piskulich and Ward Thompson, University of Kansas. Users are free to share/modify this code as desired; however, this code shall not be incorporated into proprietary software without prior permission from the author of this code. All rights reserved. Any questions about this repository can be directed at zeke.piskulich at gmail dot com. 
 
 # Fluctuation Theory for Dynamics (DCM)
